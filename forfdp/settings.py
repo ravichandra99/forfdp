@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'staticfiles'),
     ]
@@ -131,4 +132,13 @@ STATICFILES_DIRS = [
 ACCOUNT_ACTIVATION_DAYS = 1
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'email-smtp.ap-south-1.amazonaws.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'AKIAUYXXUI7RRZUG4GPQ'
+EMAIL_HOST_PASSWORD = 'BHs2EbmXrL+FRkCNWyPt4X2GmvyIUlwIvtSIp/SZW6Rv'
+EMAIL_USE_TLS = True
+REGISTRATION_EMAIL_SUBJECT_PREFIX = '[CODEGNAN]'
+SEND_ACTIVATION_EMAIL = True
+REGISTRATION_DEFAULT_FROM_EMAIL = 'info@codegnan.com'

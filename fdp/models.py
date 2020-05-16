@@ -8,3 +8,9 @@ class Message(models.Model):
 
     def __str__(self):
         return "(%s): %s" % (self.sender, self.text)
+
+class YT(models.Model):
+	just_id = models.CharField(max_length = 20)
+
+	def __str__(self):
+		return "ytlink here"

@@ -1,15 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from fdp.models import Message
+from fdp.models import Message,YT
 
 
 @login_required
 def index(request):
     quantity = Message.objects.count()
+    yt = YT.objects.get(id = 1)
     last_ten_messages_index = 0 if quantity < 10 else quantity - 10
     last_ten_messages = reversed(Message.objects.all()[last_ten_messages_index:])
-    context = {'messages_list': last_ten_messages}
+    context = {'messages_list': last_ten_messages,'yt_id':yt.just_id}
     return render(request, 'index.html', context)
 
 
