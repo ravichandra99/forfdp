@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+<div class="col-md-9">
+	<br>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NgE7rAFSQnw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+<div class="col-md-3">
+<br>
+
+    <textarea id = "textarea_id" class="history">
+
+    </textarea>
+
+    <form>
+    	<div class="input-group mb-3">
+  <input id = "text" type="text" class="form-control" placeholder="Message.." aria-label="Message.." aria-describedby="basic-addon2" title="enter message here">
+  <div class="input-group-append">
+    <input class="btn btn-outline-secondary" id="submit" type="submit" value="send">
+  </div>
+</div>
+      <!--<input id="text" type="text" title="enter message here"/>
+      <input id="submit" type="submit" value="send"/>-->
+    </form>
+    <br><br><br>
+    <div>
+    	<p><em>Click the button below to <mark>subscribe</mark> to our Youtube Channel</em></p>
+
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UCEZAhBBmxvUHaYkWB8J4Ltg" data-layout="default" data-count="default"></div>
+
+<p><em>and hit bell icon to get notified of new updates</em></p>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="{% static 'chat.js' %}"></script>
+</div>
+
+</div>
+{% endblock %}
